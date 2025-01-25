@@ -18,7 +18,7 @@ export class BasicReportsController {
   public getEmploymentLetter(@Res() response: Response) {
     const pdfDoc = this.basicReportsService.employmentLetter();
     response.setHeader('Content-Type', 'application/pdf');
-    pdfDoc.info.Title = 'Hello World.pdf';
+    pdfDoc.info.Title = 'Employment Letter.pdf';
     pdfDoc.pipe(response);
     pdfDoc.end();
   }
@@ -30,7 +30,17 @@ export class BasicReportsController {
   ) {
     const pdfDoc = await this.basicReportsService.employmentLetterById(+id);
     response.setHeader('Content-Type', 'application/pdf');
-    pdfDoc.info.Title = 'Hello World.pdf';
+    pdfDoc.info.Title = 'Employment Letter By Id.pdf';
+    pdfDoc.pipe(response);
+    pdfDoc.end();
+  }
+
+  //
+  @Get('countries')
+  public async getCountries(@Res() response: Response) {
+    const pdfDoc = await this.basicReportsService.getCountries();
+    response.setHeader('Content-Type', 'application/pdf');
+    pdfDoc.info.Title = 'Countries-Report.pdf';
     pdfDoc.pipe(response);
     pdfDoc.end();
   }
