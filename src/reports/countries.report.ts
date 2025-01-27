@@ -27,7 +27,8 @@ export const getCountriesReport = (
         layout: 'customLayout01', //'lightHorizontalLines', // optional
         table: {
           // headers are automatically repeated if the table spans over multiple pages
-          // you can declare how many rows should be treated as headers
+          // you can declare how many rows should be treated as headersfile:///home/brauliogr/Documents/Projects/Nest/nest-backend-architecture
+
           headerRows: 1,
           widths: [50, 50, 50, '*', 'auto', '*'],
 
